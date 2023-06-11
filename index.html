@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Tester</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript" src="scripts/animate.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <h2>Animations</h2>
+            <div class="animation-type">
+                <h3>Entrances</h3>
+                <button id="enter-from-left-content" class="animate-button">From left</button>
+                <button id="enter-from-right-content" class="animate-button">From Right</button>
+                <button id="fade-in-content" class="animate-button">Fade in</button>
+            </div>
+            <div class="animation-type">
+                <h3>Content Effects</h3>
+                <button id="shadow-pop-content" class="animate-button">Shadow pop</button>
+            </div>
+            <div class="animation-type">
+                <h3>Text Effects</h3>
+                <button id="tracking-in-expand" class="animate-button">Tracking in expand</button>
+                <button id="text-shadow-pop-top" class="animate-button">Shadow pop</button>
+                <button id="text-pop-up-top" class="animate-button">Pop up</button>
+            </div>
+            <div class="animation-type">
+                <h3>Background Effects</h3>
+                <button id="bg-color-change-2x" class="animate-button">Colour change</button>
+            </div>
+            <div class="animation-type">
+                <input type="text" id="custom-css-input" placeholder="Enter custom CSS">
+                <button id="apply-css-button">Apply CSS</button>
+            </div>
+        </div>
+        <div id="main" class="main">
+            <div id="content-box" class="content-box">
+                <h1 id="animate-h1">Animation</h1>
+                <p>See your animation working here...</p>
+            </div>
+            <div id="css-box">
+                <textarea id="text-field">test</textarea>
+                <button onclick="copyText()">Copy css</button>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        function copyText() {
+            // Get the text field
+            var copyText = document.getElementById("text-field");
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText.value);
+            console.log('copied: ' + copyText.value)
+        }
+    </script>
+</body>
+
+</html>
